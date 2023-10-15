@@ -8,6 +8,7 @@ part 'home.g.dart';
 @TypedGoRoute<HomeRoute>(path: '/')
 class HomeRoute extends GoRouteData {
   const HomeRoute();
+
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return Scaffold(
@@ -95,37 +96,6 @@ class HomeRoute extends GoRouteData {
                     ],
                   ),
                 ),
-                // GridView(
-                //   shrinkWrap: true,
-                //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                //     crossAxisCount: 2,
-                //     mainAxisSpacing: 10,
-                //     crossAxisSpacing: 10,
-                //     childAspectRatio: 9 / 12,
-                //   ),
-                //   children: const [
-                //     MenuCard(
-                //       title: 'Test',
-                //       description: 'Test description',
-                //       icon: Icons.star,
-                //     ),
-                //     MenuCard(
-                //       title: 'Test',
-                //       description: 'Test description',
-                //       icon: Icons.star,
-                //     ),
-                //     MenuCard(
-                //       title: 'Test',
-                //       description: 'Test description',
-                //       icon: Icons.star,
-                //     ),
-                //     MenuCard(
-                //       title: 'Test',
-                //       description: 'Test description',
-                //       icon: Icons.star,
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ),
