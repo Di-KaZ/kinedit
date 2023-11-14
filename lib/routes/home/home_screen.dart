@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kinedit/routes/home/card.dart';
+import 'package:kinedit/routes/home/select_mode_modal.dart';
 import 'package:kinedit/shared/appbar.dart';
 import 'package:kinedit/shared/background.dart';
 
@@ -43,12 +44,14 @@ class HomeScreen extends StatelessWidget {
                               description:
                                   'ouais ouais la description de fou malade',
                               icon: Icons.star,
+                              onTap: () => openSelectModeModal(context),
                             ),
                             const SizedBox(height: 20),
                             MenuCard(
                               title: 'Test',
                               description: 'Test description',
                               icon: Icons.star,
+                              onTap: () {},
                             ),
                           ],
                         ),
@@ -61,12 +64,14 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               MenuCard(
+                                onTap: () {},
                                 title: 'Test',
                                 description: 'Test description',
                                 icon: Icons.star,
                               ),
                               const SizedBox(height: 20),
                               MenuCard(
+                                onTap: () {},
                                 title: 'Test',
                                 description: 'Test description',
                                 icon: Icons.star,

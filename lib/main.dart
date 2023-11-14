@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:kinedit/providers/isar.dart';
 import 'package:kinedit/providers/router.dart';
+import 'package:kinedit/shared/colorscheme.g.dart';
 
-void main() {
-  runApp(const ProviderScope(child: App()));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final isar = await initIsar();
+
+  runApp(
+    ProviderScope(
+      overrides: [
+        isarProvider.overrideWithValue(isar),
+      ],
+      child: const App(),
+    ),
+  );
 }
 
 class App extends ConsumerWidget {
@@ -16,10 +29,8 @@ class App extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Kinedit',
       routerConfig: router,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: true,
-      ),
+      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
     );
   }
 }
